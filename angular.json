@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "orbitTestRaolAngular"
+    }
+  },
+  "defaultProject": "orbitTestRaolAngular",
+  "cli": {
+    "analytics": false
+  }
 }
