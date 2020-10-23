@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { StudentFormComponent } from './components/student-form/student-form.component';
-import { StudentListComponent } from './components/student-list/student-list.component';
+import { StudentListComponent } from './components/student-list/student-list.component'
+import {SampleService} from './services/sample-service.service';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { StudentListComponent } from './components/student-list/student-list.com
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [SampleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
