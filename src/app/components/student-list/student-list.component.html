@@ -1,1 +1,19 @@
-<p>student-list works!</p>
+<div class="col-md-4" *ngFor="let student of students">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">            
+            {{student.Username}}
+            <button class="btn btn-danger" (click)="deleteStudent(student.id)">
+                <i class="ui-icon-trash">
+                </i>
+            </button>
+        </div>
+        <div class="card-body">
+            <p>{{(student.firstname +' '+ student.lastname)}} - {{student.Age}}</p>
+            <p>{{student.career}}</p>
+            <br>
+            <a class="btn btn-info-btn-block" [routerLink]="['/edit',student.id]" routerLinkActive="router-link-active" >
+                Edit Student
+            </a>
+        </div>
+    </div>
+</div>

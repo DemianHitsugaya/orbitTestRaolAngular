@@ -1,10 +1,8 @@
-import { Interface } from "readline";
-
 export interface Student{
-    id?:number,
-    username:string,
-    firstname:string,
-    lastname:string,
-    age:number,
-    career:string
+    id?:number;
+    username:string;
+    firstname:string;
+    lastname:string;
+    age:number;
+    career:string;
 }

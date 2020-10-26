@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { SampleServiceService } from 'src/app/services/sample-service.service';
 
 @Component({
   selector: 'app-student-list',
@@ -7,9 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentListComponent implements OnInit {
 
-  constructor() { }
+  @HostBinding('class') classes='row'
+
+  students: any = [];
+
+  constructor( private studentService:SampleServiceService) { }
 
   ngOnInit(): void {
+    this.getStudents();
   }
 
+  deleteStudent(id:string){
+    this.studentService.deleteStudent(parseInt(id)).subscribe(
+      res=>{
+        alert("Student Deleted!!");
+        this.getStudents()
+      },
+      err=>console.log(err)
+    )
+  }
+
+  getStudents(){
+    this.studentService.getStudents().subscribe(
+      res=>{
+        this.students = res;
+      },
+      err=>console.log(err)
+    );
+  }
+  
 }
